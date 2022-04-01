@@ -16,7 +16,7 @@ app.get('/', (_, res) => {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-app.post('/api/fileanalyse', fileUploader.single('upfile'), (_, res) => {
+app.post('/api/fileanalyse', fileUploader.single('upfile'), (req, res) => {
   console.log(req.file, req.body);
 
   res.json({
