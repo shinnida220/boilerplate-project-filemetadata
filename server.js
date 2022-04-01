@@ -20,7 +20,7 @@ app.post('/api/fileanalyse', fileUploader.single('upfile'), (req, res) => {
   console.log(req.file, req.body);
 
   res.json({
-    name: req.file?.name, type: req.file.type, size: req.file?.size
+    name: `${req.file?.originalname}.${req.file?.mimetype?.split('/')[1]}`, type: req.file?.mimetype, size: req.file?.size
   });
 })
 
